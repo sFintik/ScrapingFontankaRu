@@ -51,7 +51,7 @@ def get_article_links(base_url, path):
     url = base_url + path
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Проверка на ошибки и отправка их
+        response.raise_for_status()  # Проверка на ошибки и отправка их в консоль
         soup = BeautifulSoup(response.content, 'html.parser')
         articles = soup.find_all('article')
         links = {base_url + a['href'] for article in articles for a in article.find_all('a') if a.has_attr('href')}
