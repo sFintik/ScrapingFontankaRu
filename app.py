@@ -88,7 +88,7 @@ def get_article_content(link):
 
 def collect_data():
     base_url = 'https://www.fontanka.ru/'
-    links = get_article_links(base_url, 'incidents/') #Задаем тему новости согласно сайту
+    links = get_article_links(base_url, 'incidents/') #Задаем категорию новости согласно сайту
 
     existing_data = get_existing_data('collected_data_original.json')
     existing_urls = {entry["URL"] for entry in existing_data}
